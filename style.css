@@ -10,7 +10,7 @@
 :root{
 --header: #FF6900;
 --footer: #1A1A1A;
---tag: #008000;
+--eco: #008000;
 --discount: #FF0000;
 }
 
@@ -31,6 +31,12 @@
     justify-content: space-between;
 }
 
+
+.space-around{
+    justify-content: space-around;
+}
+/* classes, tags and selectors */
+
 a{
     text-decoration: none;
     color:white;
@@ -41,15 +47,18 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+
 header{
     background-color: var(--header);
     width:100%;
+    position:fixed;
+    z-index: 1;
 }
 
+ /* navigator */
+
 nav{
-    max-width:1200px;
-    margin: 0 auto;
-    padding: 15px 0;
+    padding: 15px 15px;
 }
 
 nav div{
@@ -58,4 +67,82 @@ nav div{
 
 nav img{
     width:100px;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+ /* main */
+
+.debug{
+    background-color: lightblue;
+    border: 2px solid black;
+}
+
+main div.container{
+    padding-top:100px;
+    height:1500px;
+}
+
+.card{
+    width: calc(100% / 3);
+    position: relative;
+}
+
+.img-wrap img{
+    width:100%;
+}
+
+.discount::after{
+    background-color: var(--discount);
+    color:white;
+    padding:5px;
+    font-size: 0.8rem;
+    font-weight:bold;
+    position: absolute;
+    left:0;
+    bottom: 115px;
+}
+
+.fifty.discount::after{
+    content: "-50%";
+}
+
+.eco::before{
+    background-color: var(--eco);
+    color:white;
+    padding:5px;
+    font-size: 0.8rem;
+    font-weight:bold;
+    position: absolute;
+    left:50px;
+    bottom: 115px;
+    content: "Sostenibilità"
+}
+
+.heart{
+    font-size: 2rem;
+    background-color: white;
+    line-height: 40px;
+    position:absolute;
+    right: 0px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.card-info h3{
+    text-transform: uppercase;
+}
+
+.new-price{
+    color:var(--discount);
+}
+
+.old-price{
+    text-decoration: line-through;
 }
