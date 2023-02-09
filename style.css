@@ -19,51 +19,64 @@
     flex-flow: row wrap;
 }
 
-.justify-center{
+.j-start{
+    justify-content: flex-start;
+}
+
+.j-center{
     justify-content: center;
 }
 
-.align-center{
+.a-center{
     align-items: center;
 }
 
-.space-between{
+.s-between{
     justify-content: space-between;
 }
 
 
-.space-around{
+.s-around{
     justify-content: space-around;
 }
+
 /* classes, tags and selectors */
 
 a{
     text-decoration: none;
     color:white;
-    padding-left: 10px;
+    padding: 5px 10px;
 }
 
-body {
+body{
     font-family: 'Noto Sans', sans-serif;
 }
 
 
 header{
     background-color: var(--header);
+    box-shadow: 0px 1px 3px rgb(6, 6, 6);
+    color: white;
     width:100%;
-    position:fixed;
-    z-index: 1;
+    z-index: 5;
+    position: fixed;
+    top:0;
+    left:0;
+    height:40px;
+}
+
+main{
+    color:black;
+    background-color: white;
+}
+
+footer{
+    background-color: var(--footer);
+    color: white;
 }
 
  /* navigator */
 
-nav{
-    padding: 15px 15px;
-}
-
-nav div{
-    max-width: 30%;
-}
 
 nav img{
     width:100px;
@@ -72,12 +85,92 @@ nav img{
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px 15px;
 }
 
 
  /* main */
 
-.debug{
-    background-color: lightblue;
-    border: 2px solid black;
+main.container{
+    margin-top:40px;
+}
+
+.main-flex{
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 20px 10px;
+}
+
+/* card */
+
+.card{
+    width: calc(100% / 3 - 20px);
+}
+
+.card img{
+    width:100%;
+    display:block;
+}
+
+.card img.second-img{
+    position:absolute;
+    display:none;
+    top:0;
+    left:0;
+}
+
+.item-image:hover img.second-img{
+    display:block;
+}
+
+.item-name{
+    text-transform: uppercase;
+}
+
+.item-image{
+    position:relative;
+}
+
+.price{
+    color:var(--discount);
+}
+
+.item-prices{
+    gap: 10px;
+}
+
+.favorite{
+    position:absolute;
+    top:10px;
+    right:0;
+    color:black;
+    background-color: white;
+    text-align: center;
+    width:40px;
+    height:40px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.favorite:hover{
+    color:var(--discount);
+}
+
+.tags{
+    position:absolute;
+    color:white;
+    font-weight: bold;
+    left:0;
+    bottom: 50px;
+}
+
+.sale{
+    background-color: var(--discount);
+    display:inline-block;
+}
+
+.eco{
+    background-color: var(--eco);
+    display:inline-block;
 }
