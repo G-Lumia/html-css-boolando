@@ -120,6 +120,9 @@ main.container{
     left:0;
 }
 
+.item-text{
+    width:100%;
+}
 .item-image:hover img.second-img{
     display:block;
 }
